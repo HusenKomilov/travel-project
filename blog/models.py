@@ -40,7 +40,7 @@ class Post(BaseModel):
     content = models.TextField()
     image = models.ImageField(upload_to="post")
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="category")
     tags = models.ManyToManyField(Tags, blank=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="author")
 
